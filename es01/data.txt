@@ -1,0 +1,6 @@
+chiave1,5
+chiave2,10
+chiave3,1
+chiave4,556
+chiave5,12345
+chiave6,773
