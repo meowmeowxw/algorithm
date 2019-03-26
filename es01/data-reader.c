@@ -11,11 +11,11 @@ int main(int argc, char *argv[])
 
 	FILE *fin ;
 	fin = fopen(argv[1],"r");
-	if ( fin == NULL )
+	if (fin == NULL)
 		goto end;
 	n=0;
 
-	while ( fgets(line,LINE_LENGTH,fin)!=NULL )
+	while (fgets(line,LINE_LENGTH,fin)!=NULL)
 		n++;
 	arr = (int *) calloc (n,sizeof(int));
 	rewind (fin);
