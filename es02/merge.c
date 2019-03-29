@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	int i, n, *arr;
 
 	/* --- Readin dataset --- */
-	printf("Lettura del file %s\n", argv[1]);
+	printf("Reading file %s\n", argv[1]);
 
 	FILE* fin = fopen(argv[1],"r");
 	if(fin == NULL) goto end;
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 
 	if(PRINT_OUTPUT)
 	{
-		printf("Ordered : \n");
+		printf("Sorted : \n");
 		for(i=0;i<n;++i)
 			printf("%d -> %d\n",(i+1),arr[i]);
 	}
@@ -80,32 +80,17 @@ void merge(int *array,int p,int q,int r)
 	while ((i<=q) && (j<=r))
 	{
 		if(array[i]<array[j])
-		{
-			barray[k]=array[i];
-			++i;
-		}
-		else
-		{
-			barray[k]=array[j];
-			++j;
-		}
-		++k;
+			barray[k++]=array[i++];
+		else 
+			barray[k++]=array[j++];
 	}
 	while (i<=q)
-	{
-		barray[k]=array[i];
-		++i;
-		++k;
-	}
+		barray[k++]=array[i++];	
+
 	while (j<=r)
-	{
-		barray[k]=array[j];
-		++j;
-		++k;
-	}
+		barray[k++]=array[j++];
+
 	for (k=p;k<=r;++k)
-	{
 		array[k]=barray[k-p];
-	}
 	free(barray);
 }
