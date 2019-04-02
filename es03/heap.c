@@ -32,7 +32,7 @@ void heapify(int i)
 	int r=2*i+2;
 	int largest;
 	int tmp;
-	if(l<=HEAPSIZE && array[l]>array[i])
+	if(l<HEAPSIZE && array[l]>array[i])
 		largest=l;
 	else
 		largest=i;
