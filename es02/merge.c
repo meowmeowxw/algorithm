@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #define LINE_LENGTH 120
-#define PRINT_OUTPUT 1
+#define PRINT_OUTPUT 0
 void mergeSort(int *array,int p,int r);
 void merge (int *array,int p,int q,int r);
 int main(int argc, char *argv[])

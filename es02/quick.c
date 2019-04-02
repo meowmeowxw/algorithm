@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #define LINE_LENGTH 120
-#define PRINT_OUTPUT 1
+#define PRINT_OUTPUT 0
 int partition(int *array,int p,int r);
 void quicksort(int *array,int p,int r);
 int main(int argc, char *argv[])
