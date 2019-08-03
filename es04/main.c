@@ -13,25 +13,26 @@ int main (int argc, char* argv[])
    int n;
    clock_t start, end;
 
-   printf("\nLettura del file %s\n\n",argv[1]);
+   printf("\nReading file.. %s\n\n",argv[1]);
 
    FILE* fin = fopen(argv[1] ,"r");
    if(fin == NULL) goto end;
+   // <= >= == --> <-- ==> != 
    n = 0;
    while ( fgets((char*)line, LINE_LENGTH, fin)!= NULL ) n++;
 
    rewind(fin);
 
-   ////////// PROVA FUNZIONI HASH //////////
+   //	Try hash functions 
    while (fgets((char*)line,LINE_LENGTH,fin)!= NULL )
    {
-      // legge la chiave (parte che precede il separatore)
+      // Read the key (part before separator (,)
       buf = (uint8_t*) strtok((char*)line, separator);
 
-      // legge il valore (parte che segue il separatore)
+      // read value (part after separator(,)
       key = (uint8_t*) strtok(NULL, separator);
 
-      // calcola l'hash digest della key letta
+      // compute key hash
       digest = hash_modulus(key,71327);
       if(PRINT_OUTPUT) printf("hash_modulus('%.*s')\t->\tDigest: %lu\t",KEY_LENGTH,key,(long unsigned int)digest);
 
